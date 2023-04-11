@@ -1,0 +1,61 @@
+/* from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap');
+
+
+/* Common styles */
+/* for every elements */
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* Section 1 */
+.section-1{
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    /* place content into center */
+    display: flex;
+    /* change flex direction */
+    flex-direction: column;
+    align-items: center;
+    /* make space */
+    justify-content: space-evenly;
+
+}
+
+.section-heading{
+    font-size: 12rem;
+    font-weight: 900;
+    color: whitesmoke;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: .3rem;
+    /* shadow */
+    text-shadow: .3rem .3rem .3rem black;
+}
+
+.section-1-icons i{
+    font-size: 35rem;
+    color: yellow;
+    position: absolute;
+    /* move the element */
+    transform: translate(-50%, -50%) scale(0);
+    text-shadow: .2rem .2rem .2rem black;
+    transition: transform .3s;
+}
+
+/* select and display first element */
+.section-1-icons i.change{
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s .3s;
+}
