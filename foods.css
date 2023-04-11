@@ -1,0 +1,159 @@
+/* from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap');
+
+
+/* Common styles */
+/* for every elements */
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* Section 1 */
+.section-1{
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    /* place content into center */
+    display: flex;
+    /* change flex direction */
+    flex-direction: column;
+    align-items: center;
+    /* make space */
+    justify-content: space-evenly;
+
+}
+
+.section-heading{
+    font-size: 12rem;
+    font-weight: 900;
+    color: whitesmoke;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: .3rem;
+    /* shadow */
+    text-shadow: .3rem .3rem .3rem black;
+}
+
+.section-1-icons i{
+    font-size: 35rem;
+    color: yellow;
+    position: absolute;
+    /* move the element */
+    transform: translate(-50%, -50%) scale(0);
+    text-shadow: .2rem .2rem .2rem black;
+    transition: transform .3s;
+}
+
+/* select and display first element */
+.section-1-icons i.change{
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s .3s;
+}
+
+/* Section 2 */
+.section-2{
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rem 0 10rem 0;
+}
+
+.cards-container{
+    /* placed card side-by-side */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card{
+    width: 30rem;
+    background-color: #a79a2d;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1rem 1rem 1rem black;
+    position: relative;
+    transform: rotateY(20deg) skewX(-5deg);
+    /* transition on hover effects */
+    transition: .5sec, box-shadow 0.5sec;
+}
+
+/* hover effects */
+.card:hover{
+    transform: rotateY(20deg) skewX(-5deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem black;
+
+}
+
+/* for left */
+.card::before{
+    content: "";
+    height: 100%;
+    width: 1rem;
+    background-color: #817824;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: skewY(45deg);
+    /* position it correctly */
+    transform-origin: right;
+    box-shadow: -1rem -1rem 1rem black;
+}
+
+/* for top */
+.card::after{
+    content: "";
+    height: 1rem;
+    width: 100%;
+    background-color: #817824;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transform: skewX(45deg);
+    /* position it correctly */
+    transform-origin: bottom;
+    box-shadow: -1rem -1rem 1rem black;
+
+}
+
+.card-img{
+    width: 100%;
+    height: 80%;
+}
+
+.card-name{
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    margin: 2rem 0;
+    text-shadow: .15rem .15rem .15rem black;
+}
+
+.card-btn{
+    width: 70%;
+    color: #888;
+    background-color: black;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: .2rem;
+    border: none;
+    padding: .5rem 0;
+    cursor: pointer;
+    box-shadow: -.2rem -.2rem -.2rem black;
+}
