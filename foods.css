@@ -34,7 +34,7 @@ html{
 }
 
 .section-heading{
-    font-size: 12rem;
+    font-size: 10rem;
     font-weight: 900;
     color: whitesmoke;
     text-align: center;
@@ -80,6 +80,7 @@ html{
 .card{
     width: 30rem;
     background-color: #a79a2d;
+    margin-top: 1rem;
     padding: 4rem;
     display: flex;
     flex-direction: column;
@@ -89,7 +90,7 @@ html{
     position: relative;
     transform: rotateY(20deg) skewX(-5deg);
     /* transition on hover effects */
-    transition: .5sec, box-shadow 0.5sec;
+    transition: .5sec box-shadow 0.5sec;
 }
 
 /* hover effects */
@@ -156,4 +157,123 @@ html{
     padding: .5rem 0;
     cursor: pointer;
     box-shadow: -.2rem -.2rem -.2rem black;
+}
+
+/* Section 3 */
+.section-3{
+    background-color: #333;
+    padding: 5rem 0;
+}
+
+.gallery{
+    display: flex;
+    /* separate rows */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+
+.food-img{
+    width: 24vm;
+    height: 15vw;
+    object-fit: cover;
+    /* multi-color/level shadow effect */
+    box-shadow: .3rem .3rem .1rem #e92929,
+    .5rem .5rem .1rem #a2e946, .7rem .7rem .1rem #297ce9,
+    .9rem .9rem .1rem #e92999;
+}
+
+.gallery-link:hover .food-img{
+    box-shadow: 1rem 1rem .1rem #e92929,
+    2rem 2rem .1rem #a2e946, .3rem .3rem .1rem #297ce9,
+    4rem 4rem .1rem #e92999;
+    transition: all .5s;
+    filter: blur(.5rem);
+    opacity: .5;
+    transform: scale(1.1);
+}
+
+.gallery-link{
+    position: relative;
+    /* create space in between each image */
+    margin: 4rem 1rem;
+}
+
+/* create 2 lines */
+.gallery-link::before{
+    content: "";
+    position: absolute;
+    /* move the line */
+    top: 2vw;
+    left: 80%;
+    /* appear the line */
+    width: .2rem;
+    height: 0;
+    background-color: white;
+    z-index: 10;
+    transition: height .5s;
+}
+
+/* hover effect */
+.gallery-link:hover::before{
+    height: 80%;
+}
+
+.gallery-link:hover::after{
+    width: 90%;
+}
+
+.gallery-link::after{
+    content: "";
+    position: absolute;
+    /* move the line */
+    top: 30%;
+    left: 2rem;
+    /* appear the line */
+    width: 0;
+    height: .2rem;
+    background-color: white;
+    transition: width .5s;
+}
+
+.food-name{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: white;
+    /* hover effect */
+    width: 0;
+    overflow: hidden;
+    transition: width .3s;
+}
+
+.gallery-link:hover .food-name{
+    width: 100%;
+    transition: width 1.5s .5s;
+}
+
+.food-description{
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    color: wheat;
+    /* hover effect */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.gallery-link:hover .food-description{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s 1s;
 }
